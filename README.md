@@ -1,5 +1,5 @@
 # Agriculture and Food Issues in Interactive Dashboards
-### **Author:** [Merlyn Johanna Hurtado](https://github.com/merlynjocol)
+### **Author:** [Merlyn J. Hurtado](https://github.com/merlynjocol)
 
 # Description
 
