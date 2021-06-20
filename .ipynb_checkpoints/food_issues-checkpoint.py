@@ -138,7 +138,7 @@ def load_data():
     #df_all = all_df_concat.drop( all_df_concat.index[[164,165,166,167,168,169,170,171,172]]).reset_index()
     
     # DATA total area from FAO STAT 2018Year
-    total_area = pd.read_csv('data_production\FAOSTAT_data_land_use_country.csv')
+    total_area = pd.read_csv('data_production/FAOSTAT_data_land_use_country.csv')
     #removing columns
     total_area2 = total_area.drop(labels= ['Domain Code', 'Domain', 'Area Code (FAO)','Element Code',
        'Element', 'Item Code', 'Year Code', 'Year', 'Unit', 'Flag', 'Flag Description'], axis=1)
@@ -158,16 +158,16 @@ def load_data():
     #DATA FOR LAND USE-QUANTITIES
     skipcol_land = ['Domain Code', 'Domain', 'Area Code (FAO)', 'Element Code',
        'Element', 'Item Code', 'Year Code', 'Unit', 'Flag', 'Flag Description']
-    land_use = pd.read_csv('data_production\FAOSTAT_data_aglandV1_1998_2018.csv',usecols=lambda x: x not in skipcol_land, index_col=0 ) 
+    land_use = pd.read_csv('data_production/FAOSTAT_data_aglandV1_1998_2018.csv',usecols=lambda x: x not in skipcol_land, index_col=0 ) 
     
     
     # DATA SHARE AGRICULTURE LAND
     skipcol_land = ['Domain Code', 'Domain', 'Area Code (FAO)', 'Element Code',
        'Element', 'Item Code', 'Year Code', 'Unit', 'Flag', 'Flag Description']
-    land_share = pd.read_csv('data_production\FAOSTAT_data_share_agriland.csv', usecols=lambda x: x not in skipcol_land, index_col=0 ).reset_index()
+    land_share = pd.read_csv('data_production/FAOSTAT_data_share_agriland.csv', usecols=lambda x: x not in skipcol_land, index_col=0 ).reset_index()
     land_share.rename(columns = {'Area' :'Country'}, inplace = True)
     #DATA JSON COUNTRIES
-    country_shapes = json.load(open('data_production\world-countries.json'))
+    country_shapes = json.load(open('data_production/world-countries.json'))
 
     return all_farms, land_use, land_share, country_shapes, df_all
 all_farms, land_use, land_share, country_shapes, df_all = load_data()
@@ -248,11 +248,11 @@ st.markdown ('---')
 # GEODATA
 #MAP
 #file with coordinates
-country_geo = gpd.read_file('data_production\world-countries.json')
+country_geo = gpd.read_file('data_production/world-countries.json')
 country_geo.rename(columns = {'id' :'ISO3'}, inplace = True)
 
 #oficial file with ISOCODE from FAO
-isocode = pd.read_excel('data_production\country_codes.xlsx')
+isocode = pd.read_excel('data_production/country_codes.xlsx')
 isocode.rename(columns = {'Short name' :'Country'}, inplace = True)
 
 #dataframe for map share agriculture landuse for Year 2018
@@ -322,7 +322,7 @@ st.text("Livestock is the production of meat and products derivated from animal 
 # download data 
 skipcol_cropsEN = ['Domain Code', 'Domain', 'Area Code (FAO)', 'Element Code',
        'Element', 'Item Code', 'Year Code', 'Flag', 'Flag Description']
-crops_livestock= pd.read_csv('data_production\FAOSTAT_data_livestock_crops_1978_2019_EN.csv', usecols=lambda x: x not in skipcol_cropsEN, index_col=0 ).reset_index()
+crops_livestock= pd.read_csv('data_production/FAOSTAT_data_livestock_crops_1978_2019_EN.csv', usecols=lambda x: x not in skipcol_cropsEN, index_col=0 ).reset_index()
 
 #only the columns we need 
 options = ['Agricultural land', 'Land under temporary crops', 'Land with temporary fallow',
@@ -436,8 +436,8 @@ farm_option = st.radio("SELECT AN OPTION", ("Land in smallfarms % ", 'Total smal
 
 
 #GEO DATA MAP2 
-country_geo1 = gpd.read_file('data_production\world-countries.json')
-names = pd.read_csv('data_production\country names vs UNoficial_2021 - Sheet1.csv') #dataset with UN OFICIAL names
+country_geo1 = gpd.read_file('data_production/world-countries.json')
+names = pd.read_csv('data_production/country names vs UNoficial_2021 - Sheet1.csv') #dataset with UN OFICIAL names
 #merging the list of names to get the ISOCODE
 names.rename(columns = {'land GRAIN ' :'Country'}, inplace = True)
 farms_iso = pd.merge(df_all, names, on=["Country"])
