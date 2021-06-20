@@ -8,7 +8,7 @@ The main goal of this project is to built and deploy interactive dashboards of d
 
 # Instructions to use the Dashboard
 
-https://share.streamlit.io/merlynjocol/covid_dashboards_opendata/main/covid_opendata.py🔴
+🔴Link:  https://share.streamlit.io/merlynjocol/foodissues_interactive_dashboards/main/food_issues.py
 
 1. Select the level of the issue. PRODUCTION | CONSUMPTION | WASTE | SOCIO-ECONOMIC | CLIMATE CHANGE 
 
