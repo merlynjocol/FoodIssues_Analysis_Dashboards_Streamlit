@@ -117,7 +117,7 @@ st.cache(persist=True)
 def load_data():
     # DATA FOR BIG FARMS AND SMALL FARMS 
     skipcols = ['Most recent Gini index for land distribution  & tendency *','Sources', 'Unnamed: 10']
-    all_df = pd.read_excel('data_production\Land_farmers_GRAIN_land-food-report-dataset.xls', sheet_name=['AFRICA','ASIA AND THE PACIFIC',
+    all_df = pd.read_excel('data_production/Land_farmers_GRAIN_land-food-report-dataset.xls', sheet_name=['AFRICA','ASIA AND THE PACIFIC',
                                                                                               'LATIN AMERICA AND THE CARIBBEAN',
                                                                                               'NORTH AMERICA',
                                                                                               'EUROPE'], 
