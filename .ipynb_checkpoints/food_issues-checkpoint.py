@@ -387,7 +387,7 @@ elif choice == 'Production':
     # download data 
     skipcol_cropsEN = ['Domain Code', 'Domain', 'Area Code (FAO)', 'Element Code',
            'Element', 'Item Code', 'Year Code', 'Flag', 'Flag Description']
-    crops_livestock= pd.read_csv('data_production\FAOSTAT_data_livestock_crops_1978_2019_EN.csv', usecols=lambda x: x not in skipcol_cropsEN, index_col=0 ).reset_index()
+    crops_livestock= pd.read_csv('data_production/FAOSTAT_data_livestock_crops_1978_2019_EN.csv', usecols=lambda x: x not in skipcol_cropsEN, index_col=0 ).reset_index()
 
     #only the columns we need 
     options = ['Agricultural land', 'Land under temporary crops', 'Land with temporary fallow',
