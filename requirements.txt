@@ -8,3 +8,4 @@ streamlit  == 0.81.1
 streamlit-folium == 0.1.1
 xlrd ==  2.0.1
 openpyxl == 3.0.7
+pickleshare == 0.7.5
