@@ -229,10 +229,10 @@ if choice == 'Home':
         st.write(" ")
 
     with col3:
-        st.image('images/planet&logo.jpg', width=300)
+        st.image('images/planet&logo.JPG', width=300)
         
     st.header('''Explore the Dashboards''')         
-    st.image('images/persona_computer.jpg', width=200)
+    st.image('images/persona_computer.JPG', width=200)
     st.write ('''1. Select the lever in the Food System''')
     st.write ('''2. Select the COUNTRY or COUNTRIES, and the METRIC to analyse and the interval''')
     st.write('''3. You can print and download the charts''')
