@@ -174,7 +174,7 @@ def load_data():
     #df_all = all_df_concat.drop( all_df_concat.index[[164,165,166,167,168,169,170,171,172]]).reset_index()
     
     # DATA total area from FAO STAT 2018Year
-    total_area = pd.read_csv('data_production\FAOSTAT_data_land_use_country.csv')
+    total_area = pd.read_csv('data_production/FAOSTAT_data_land_use_country.csv')
     #removing columns
     total_area2 = total_area.drop(labels= ['Domain Code', 'Domain', 'Area Code (FAO)','Element Code',
        'Element', 'Item Code', 'Year Code', 'Year', 'Unit', 'Flag', 'Flag Description'], axis=1)
@@ -194,7 +194,7 @@ def load_data():
     #DATA FOR LAND USE-QUANTITIES
     skipcol_land = ['Domain Code', 'Domain', 'Area Code (FAO)', 'Element Code',
        'Element', 'Item Code', 'Year Code', 'Unit', 'Flag', 'Flag Description']
-    land_use = pd.read_csv('data_production\FAOSTAT_data_aglandV1_1998_2018.csv',usecols=lambda x: x not in skipcol_land, index_col=0 ) 
+    land_use = pd.read_csv('data_production/FAOSTAT_data_aglandV1_1998_2018.csv',usecols=lambda x: x not in skipcol_land, index_col=0 ) 
     
     
     # DATA SHARE AGRICULTURE LAND
