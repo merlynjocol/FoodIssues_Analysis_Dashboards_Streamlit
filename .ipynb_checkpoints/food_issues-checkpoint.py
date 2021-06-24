@@ -200,10 +200,10 @@ def load_data():
     # DATA SHARE AGRICULTURE LAND
     skipcol_land = ['Domain Code', 'Domain', 'Area Code (FAO)', 'Element Code',
        'Element', 'Item Code', 'Year Code', 'Unit', 'Flag', 'Flag Description']
-    land_share = pd.read_csv('data_production\FAOSTAT_data_share_agriland.csv', usecols=lambda x: x not in skipcol_land, index_col=0 ).reset_index()
+    land_share = pd.read_csv('data_production/FAOSTAT_data_share_agriland.csv', usecols=lambda x: x not in skipcol_land, index_col=0 ).reset_index()
     land_share.rename(columns = {'Area' :'Country'}, inplace = True)
     #DATA JSON COUNTRIES
-    country_shapes = json.load(open('data_production\world-countries.json'))
+    country_shapes = json.load(open('data_production/world-countries.json'))
 
     return all_farms, land_use, land_share, country_shapes, df_all
 all_farms, land_use, land_share, country_shapes, df_all = load_data()
@@ -313,11 +313,11 @@ elif choice == 'Production':
     # GEODATA
     #MAP
     #file with coordinates
-    country_geo = gpd.read_file('data_production\world-countries.json')
+    country_geo = gpd.read_file('data_production/world-countries.json')
     country_geo.rename(columns = {'id' :'ISO3'}, inplace = True)
 
     #oficial file with ISOCODE from FAO
-    isocode = pd.read_excel('data_production\country_codes.xlsx')
+    isocode = pd.read_excel('data_production/country_codes.xlsx')
     isocode.rename(columns = {'Short name' :'Country'}, inplace = True)
 
     #dataframe for map share agriculture landuse for Year 2018
@@ -511,11 +511,11 @@ elif choice == 'Consumption':
 
     #CREATING DATAFRAMES 
         #file with coordinates
-    country_geo = gpd.read_file('data_production\world-countries.json')
+    country_geo = gpd.read_file('data_production/world-countries.json')
     country_geo.rename(columns = {'id' :'ISO3'}, inplace = True)
     
     # DATA total area from NCDRisC
-    obesity_adults = pd.read_csv('data_nutrition\prevalence-of-obesity-in-adult-males.csv')
+    obesity_adults = pd.read_csv('data_nutrition/prevalence-of-obesity-in-adult-males.csv')
 
     #mapping obesity 
     country = st.multiselect("SELECT A YEAR", obesity_adults ['Year'].unique(),key= "obesity" )
@@ -586,8 +586,8 @@ elif choice == 'Social':
 
 
     #GEO DATA MAP2 
-    country_geo1 = gpd.read_file('data_production\world-countries.json')
-    names = pd.read_csv('data_production\country names vs UNoficial_2021 - Sheet1.csv') #dataset with UN OFICIAL names
+    country_geo1 = gpd.read_file('data_production/world-countries.json')
+    names = pd.read_csv('data_production/country names vs UNoficial_2021 - Sheet1.csv') #dataset with UN OFICIAL names
     #merging the list of names to get the ISOCODE
     names.rename(columns = {'land GRAIN ' :'Country'}, inplace = True)
     farms_iso = pd.merge(df_all, names, on=["Country"])
@@ -706,7 +706,7 @@ elif choice == 'Climate change':
     st.write (''' Land use is measured in meters squared (m²) per kilogram of a given food product.''')
 
     # DATA total area from NCDRisC
-    food_land = pd.read_csv('data_nutrition\land-use-protein-poore(1).csv')
+    food_land = pd.read_csv('data_nutrition/land-use-protein-poore(1).csv')
     food_landsorted = food_land.sort_values(by= "Land use per 100g protein (Poore & Nemecek, 2018)", ascending=True)
     bar_foodland = px.bar(food_landsorted  , x="Land use per 100g protein (Poore & Nemecek, 2018)", y="Entity", width= 900, height = 800)
     bar_foodland.update_layout(plot_bgcolor= "white")
