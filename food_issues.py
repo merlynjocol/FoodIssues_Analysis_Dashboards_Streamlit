@@ -460,7 +460,7 @@ elif choice == 'Production':
                                     'Land under permanent crops':"#43aa8b",
                                     'Forest land':'#2d6a4f', #'#4d908e',#0bca9b',
                                     'Land under perm. meadows and pastures':'#f8961e',
-                                   'Land under temp. meadows and pastures': '#f94144',
+                                    'Land under temp. meadows and pastures': '#f94144',
                                     'Land with temporary fallow': '#f9c74f'}
     # plot the figure use groupby and a list comprehension to create data                                   
     databar = [go.Bar(name=group, x= bar['Type_land'], y= bar['Value'], marker={'color': colors[group]}) for group, bar in bar_year.groupby(by='Item') ]
