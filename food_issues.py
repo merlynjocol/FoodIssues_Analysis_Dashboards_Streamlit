@@ -58,9 +58,9 @@ from PIL import Image
 st.sidebar.image('images/logoPNG.png', width=110)
 st.sidebar.title('''Food Issues''') 
 st.sidebar.write (''' 📈 This App help you to explore the Food Issues from Farm to Fork.''')
-st.sidebar.header('''Select the page''') 
+st.sidebar.header('''Select the Issue''') 
 
-st.sidebar.header('''TESTING''') 
+#st.sidebar.header('''TESTING''') 
 # MULTIPAGES SELECTOR 
 # create a button in the side bar that will move to the next page/radio button choice
 #next = st.sidebar.button('Next on list')
@@ -92,7 +92,7 @@ new_choice = ['Home','Production','Consumption','Social','Climate change']
    #     next_clicked = 0 # go back to the beginning i.e. homepage
 
 # create your radio button with the index that we loaded
-choice = st.sidebar.radio("go to",('Home','Production','Consumption','Social','Climate change'),)
+choice = st.sidebar.radio(('Home','Production','Consumption','Social','Climate change'),)
 #--choice = st.sidebar.radio("go to",('Home','Production','Consumption','Social','Climate change'), index=next_clicked)
 # pickle the index associated with the value, to keep track if the radio button has been used
 #pkle.dump(new_choice.index(choice), open('next.p', 'wb'))
