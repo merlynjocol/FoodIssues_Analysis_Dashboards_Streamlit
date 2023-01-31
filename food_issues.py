@@ -279,7 +279,7 @@ elif choice == 'Production':
     col1, line, col2 = st.beta_columns([2,0.5,4])
 
     with col1:
-        st.subheader("Agriculture land usee at Worldwide")
+        st.subheader("Agriculture land use at Worldwide")
         st.plotly_chart(fig_pie, unsafe_allow_html=True)
         st.text("Source: FAO STATS 2018. Land Use Inputs") #footer in the chart 
     with line: 
@@ -306,7 +306,7 @@ elif choice == 'Production':
         st.plotly_chart(fig_line, unsafe_allow_html=True)
         st.text("Source: FAO STATS 1998-2018. Land Use Inputs") #footer in the chart 
 
-    st.error('This is an error', icon="🚨")
+
 
     
     # CONTAINER 3
@@ -404,10 +404,6 @@ elif choice == 'Production':
     new_df_country  = new_df[new_df['Country'].isin(Country)]
     df_year_country = new_df_country.groupby(['Year', 'Item'])['Value'].sum().reset_index()
 
-    #STATE AN ERROR
-    if not Country:
-        st.error(" ⚠️ Please select at least one country.")
-
 
 
      # LINECHART BY YEAR
@@ -493,6 +489,7 @@ elif choice == 'Production':
         st.plotly_chart(x, unsafe_allow_html=True)
         st.text("Source: FAO STATS 2018. Land Use Inputs") #footer in the chart 
 
+    st.error('This is an error', icon="🚨")
 
         
         
