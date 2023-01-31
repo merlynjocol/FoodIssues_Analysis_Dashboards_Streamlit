@@ -250,7 +250,7 @@ elif choice == 'Production':
 
     st.markdown ('---')
     # CONTAINER 2
-    st.title("* How much land are we using for agriculture?")
+    st.title("*How much land are we using for agriculture?")
 
     #CREATING DATAFRAMES 
     #selecting data from Year=2018
@@ -308,7 +308,7 @@ elif choice == 'Production':
    
     # CONTAINER 3
     st.markdown ('---')
-    st.title("* How much land are we using for agriculture?")
+    st.title("*How much land are we using for agriculture?")
 
     # GEODATA
     #MAP
@@ -397,7 +397,7 @@ elif choice == 'Production':
     new_df.rename(columns = {'Area' :'Country'}, inplace = True)
 
     # selecting the country
-    Country = st.multiselect("SELECT A COUNTRY", new_df['Country'].unique())
+    Country = st.multiselect("SELECT A COUNTRY or COUNTRIES", new_df['Country'].unique())
     #create the DF with the country
     new_df_country  = new_df[new_df['Country'].isin(Country)]
     df_year_country = new_df_country.groupby(['Year', 'Item'])['Value'].sum().reset_index()
