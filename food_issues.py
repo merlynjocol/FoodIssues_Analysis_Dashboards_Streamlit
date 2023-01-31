@@ -305,13 +305,10 @@ elif choice == 'Production':
 
         st.plotly_chart(fig_line, unsafe_allow_html=True)
         st.text("Source: FAO STATS 1998-2018. Land Use Inputs") #footer in the chart 
-
-
-
-    
+   
     # CONTAINER 3
     st.markdown ('---')
-
+    st.title("* How much land are we using for agriculture?")
 
     # GEODATA
     #MAP
@@ -381,6 +378,7 @@ elif choice == 'Production':
     st.text("Source: Food and Agriculture Organization. FAOSTATS.2018. Land Use Inputs")
 
     st.markdown ('---')
+    
     #CONTAINER 3
     st.title("How much is using the land by crops, livestocks and forests?")
     st.text("Livestock is the production of meat and products derivated from animal production")
@@ -489,7 +487,7 @@ elif choice == 'Production':
         st.plotly_chart(x, unsafe_allow_html=True)
         st.text("Source: FAO STATS 2018. Land Use Inputs") #footer in the chart 
 
-    st.error('This is an error', icon="🚨")
+   
 
         
         
