@@ -19,6 +19,8 @@ import geopandas as gpd
 import pickle as pkle
 import os.path
 
+showWarningOnDirectExecution = false
+
 
 # set page layout
 st.set_page_config(
@@ -287,7 +289,7 @@ elif choice == 'Production':
     with col2:
         #selecting country  
         st.subheader("Agriculture land use at Country Level")
-        country = st.multiselect("SELECT A COUNTRY", land_share['Country'].unique())
+        country = st.multiselect("SELECT A COUNTRY or COUNTRIES", land_share['Country'].unique())
         new_share = land_share[land_share['Country'].isin(country)]
         #STATE AN ERROR
         if not country:
