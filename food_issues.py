@@ -19,7 +19,7 @@ import geopandas as gpd
 import pickle as pkle
 import os.path
 
-showWarningOnDirectExecution = false
+#showWarningOnDirectExecution = false
 
 
 # set page layout
@@ -306,6 +306,7 @@ elif choice == 'Production':
         st.plotly_chart(fig_line, unsafe_allow_html=True)
         st.text("Source: FAO STATS 1998-2018. Land Use Inputs") #footer in the chart 
 
+    st.error('This is an error', icon="🚨")
 
     
     # CONTAINER 3
