@@ -219,7 +219,7 @@ if choice == 'Home':
     col1, col2, col3 = st.beta_columns([3, 0.5, 5])
 
     with col1:
-        st.title("Dashboards of Food Issues from Farm to Fork")
+        st.title("Dashboards of Food Issues")
         #st.markdown ('<p style= "font-family:Verdana; color:Black; font-size: 20px;">Dashboards of Food Issues from farm to fork </p>', unsafe_allow_html=True)
         st.write(':chart_with_upwards_trend: This tool has dashboard to describe and diagnose food issues at global scale and national trends') 
         
